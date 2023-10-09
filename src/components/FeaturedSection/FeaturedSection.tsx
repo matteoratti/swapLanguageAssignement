@@ -82,7 +82,7 @@ const FeaturedSection = () => {
             <motion.img
               initial={{ opacity: 0, x: 300 }}
               whileInView={{ opacity: 1, x: 114 }}
-              viewport={{ once: true, amount: 1 }}
+              viewport={{ once: true }}
               transition={{ duration: 1, delay: 0.5 }}
               className="absolute top-[10px] right-[55px] max-w-[280px]"
               src={graphIcon}
