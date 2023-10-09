@@ -13,6 +13,7 @@ export default {
         "orange-light": "#FFF1E6",
         blue: "#334155",
         "light-blue": "#64748B",
+        gray: "#F8FAFC",
       },
     },
   },
