@@ -42,26 +42,23 @@ const FeaturedSection = () => {
       </section>
 
       <section className="bg-gray">
-        <div className="flex gap-40 justify-between items-center pt-[50px] pb-[120px] mx-[75px] ">
-          <div className="overflow-hidden h-[600px] flex items-center">
-            <motion.div
-              initial={{ y: 200 }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
-                Click play when it fits you
-              </h3>
-              <p className="font-helvetica  text-blue leading-8">
-                After you log in, you&apos;ll find inspiring teachers in the
-                fun, relatable, real-life video lessons. The lessons focus on
-                everyday situations, so you can become more confident when
-                talking at work or with locals on the street. Find the topic and
-                level you need.
-              </p>
-            </motion.div>
-          </div>
+        <div className="flex gap-40 justify-between items-center pt-[50px] pb-[120px] mx-[75px] overflow-hidden h-full">
+          <motion.div
+            initial={{ y: 200 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
+              Click play when it fits you
+            </h3>
+            <p className="font-helvetica  text-blue leading-8">
+              After you log in, you&apos;ll find inspiring teachers in the fun,
+              relatable, real-life video lessons. The lessons focus on everyday
+              situations, so you can become more confident when talking at work
+              or with locals on the street. Find the topic and level you need.
+            </p>
+          </motion.div>
 
           <div className="relative">
             <motion.img
