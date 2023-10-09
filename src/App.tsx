@@ -35,21 +35,21 @@ export default function App() {
               src={circles}
               alt=""
             />
-            <img
-              className=" absolute left-[-80px] bottom-[25%]"
-              src={avatar1}
-              alt=""
-            />
-            <img
-              className="absolute left-[-100px] bottom-[90%]"
-              src={avatar2}
-              alt=""
-            />
-            <img
-              className="absolute left-[28%] bottom-[102%]"
-              src={avatar3}
-              alt=""
-            />
+            <span className="absolute left-[-80px] bottom-[25%] flex">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75 z-10"></span>
+              <img className="z-20" src={avatar1} alt="" />
+            </span>
+
+            <span className="absolute left-[-100px] bottom-[90%] flex">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75 z-10"></span>
+              <img className="z-20" src={avatar2} alt="" />
+            </span>
+
+            <span className="absolute left-[28%] bottom-[102%] flex">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-75 z-10"></span>
+              <img className="z-20" src={avatar3} alt="" />
+            </span>
+
             <img
               className="relative z-10 ciao"
               loading="lazy"
