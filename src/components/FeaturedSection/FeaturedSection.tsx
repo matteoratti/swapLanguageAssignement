@@ -9,24 +9,22 @@ const FeaturedSection = () => {
     <>
       <section className="bg-gray">
         <div className="flex gap-40 justify-between items-center pt-[100px] pb-[120px] mx-[75px] ">
-          <div className="overflow-hidden h-[600px] flex items-center">
-            <motion.div
-              initial={{ y: 200 }}
-              whileInView={{ y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1 }}
-            >
-              <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
-                learn with friends and co-workers in a Language Hub
-              </h3>
-              <p className="font-helvetica  text-blue leading-8">
-                Language Hubs are communities where you can access learning
-                material and share resources, memes and experiences with other
-                internationals. Overcoming the language barrier is hard, but by
-                helping each other, we can go from surviving to thriving.
-              </p>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ y: 200 }}
+            whileInView={{ y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+          >
+            <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
+              learn with friends and co-workers in a Language Hub
+            </h3>
+            <p className="font-helvetica  text-blue leading-8">
+              Language Hubs are communities where you can access learning
+              material and share resources, memes and experiences with other
+              internationals. Overcoming the language barrier is hard, but by
+              helping each other, we can go from surviving to thriving.
+            </p>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
@@ -42,10 +40,10 @@ const FeaturedSection = () => {
       </section>
 
       <section className="bg-gray">
-        <div className="flex gap-40 justify-between items-center pt-[50px] pb-[120px] mx-[75px] overflow-hidden h-full">
+        <div className="flex gap-40 justify-between items-center pt-[50px] pb-[120px] mx-[75px]">
           <motion.div
             initial={{ y: 200 }}
-            whileInView={{ y: 0 }}
+            whileInView={{ y: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
           >
