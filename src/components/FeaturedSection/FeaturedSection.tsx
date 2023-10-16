@@ -20,14 +20,14 @@ const FeaturedSection = () => {
   const imgTranslateX = useTransform(
     scrollYProgress,
     [0, 0.2],
-    ["900px", "-100px"]
+    ["900px", "-50px"]
   );
 
   // minivideo -500 300
   const minivideoTranslateX = useTransform(
     scrollYProgress,
     [0.6, 1],
-    ["0px", "-500px"]
+    ["0px", "-400px"]
   );
   const minivideoTranslateY = useTransform(
     scrollYProgress,
@@ -40,7 +40,7 @@ const FeaturedSection = () => {
   const graphTranslateX = useTransform(
     scrollYProgress,
     [0.6, 1],
-    ["400px", "113px"]
+    ["500px", "78px"]
   );
 
   scrollYProgress.on("change", v => {
@@ -54,9 +54,9 @@ const FeaturedSection = () => {
           <div className="flex justify-center items-center w-full h-full">
             <motion.div
               style={{ y: yTranslate, opacity: yopacity }}
-              className="ml-20 mr-[28rem] h-full"
+              className="ml-20 mr-[8rem] h-full"
             >
-              <div className="h-full w-full flex flex-col justify-center mr-24">
+              <div className="h-full w-full flex flex-col justify-center">
                 <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
                   learn with friends and co-workers in a Language Hub
                 </h3>
@@ -99,7 +99,7 @@ const FeaturedSection = () => {
               />
               <motion.img
                 style={{ x: graphTranslateX }}
-                className="absolute top-5 right-5"
+                className="absolute top-3 right-5 max-w-[260px]"
                 src={graphIcon}
                 alt=""
               />
