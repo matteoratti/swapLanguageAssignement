@@ -10,8 +10,8 @@ const FeaturedSection = () => {
   // text carousel
   const yTranslate = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.5, 0.6, 0.8],
-    ["100vh", "0vh", "0vh", "0vh", "-100vh"]
+    [0, 0.2, 0.5, 0.8],
+    ["100vh", "0vh", "0vh", "-100vh"]
   );
   const yopacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
