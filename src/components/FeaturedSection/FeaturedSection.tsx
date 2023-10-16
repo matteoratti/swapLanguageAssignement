@@ -1,91 +1,109 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import miniVideo from "../../assets/featured-section/fatured-section-video-minimized.svg";
 import sectionHub from "../../assets/featured-section/featured-section-hub.svg";
 import graphIcon from "../../assets/featured-section/featured-section-learning-overview.svg";
 
 const FeaturedSection = () => {
+  const { scrollYProgress } = useScroll();
+
+  // text carousel
+  const yTranslate = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.5, 0.6, 0.8],
+    ["100vh", "0vh", "0vh", "0vh", "-100vh"]
+  );
+  const yopacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+
+  // section hub
+  const imgOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const imgTranslateX = useTransform(
+    scrollYProgress,
+    [0, 0.2],
+    ["900px", "-100px"]
+  );
+
+  // minivideo -500 300
+  const minivideoTranslateX = useTransform(
+    scrollYProgress,
+    [0.6, 1],
+    ["0px", "-500px"]
+  );
+  const minivideoTranslateY = useTransform(
+    scrollYProgress,
+    [0.6, 1],
+    ["0px", "300px"]
+  );
+  const minivideoScale = useTransform(scrollYProgress, [0.6, 1], ["1", "1.5"]);
+
+  // graph image 400px 113px
+  const graphTranslateX = useTransform(
+    scrollYProgress,
+    [0.6, 1],
+    ["400px", "113px"]
+  );
+
+  scrollYProgress.on("change", v => {
+    console.log(v);
+  });
+
   return (
     <>
-      <section className="bg-gray">
-        <div className="flex gap-40 justify-between items-center pt-[100px] pb-[120px] mx-[75px] ">
-          <motion.div
-            initial={{ y: 200 }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
-              learn with friends and co-workers in a Language Hub
-            </h3>
-            <p className="font-helvetica  text-blue leading-8">
-              Language Hubs are communities where you can access learning
-              material and share resources, memes and experiences with other
-              internationals. Overcoming the language barrier is hard, but by
-              helping each other, we can go from surviving to thriving.
-            </p>
-          </motion.div>
+      <section className="h-[8000px] relative bg-gray">
+        <div className="h-[100vh] sticky top-0 w-full">
+          <div className="flex justify-center items-center w-full h-full">
+            <motion.div
+              style={{ y: yTranslate, opacity: yopacity }}
+              className="ml-20 mr-[28rem] h-full"
+            >
+              <div className="h-full w-full flex flex-col justify-center mr-24">
+                <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
+                  learn with friends and co-workers in a Language Hub
+                </h3>
+                <p className="font-helvetica  text-blue leading-8">
+                  Language Hubs are communities where you can access learning
+                  material and share resources, memes and experiences with other
+                  internationals. Overcoming the language barrier is hard, but
+                  by helping each other, we can go from surviving to thriving.
+                </p>
+              </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="relative"
-          >
-            <img className="max-w-2xl" src={sectionHub} alt="" />
-            <img className="absolute top-5 right-5" src={miniVideo} alt="" />
-          </motion.div>
-        </div>
-      </section>
+              <div className="h-full w-full flex flex-col justify-center">
+                <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
+                  Click play when it fits you
+                </h3>
+                <p className="font-helvetica  text-blue leading-8">
+                  After you log in, you&apos;ll find inspiring teachers in the
+                  fun, relatable, real-life video lessons. The lessons focus on
+                  everyday situations, so you can become more confident when
+                  talking at work or with locals on the street. Find the topic
+                  and level you need.
+                </p>
+              </div>
+            </motion.div>
 
-      <section className="bg-gray">
-        <div className="flex gap-40 justify-between items-center pt-[50px] pb-[120px] mx-[75px]">
-          <motion.div
-            initial={{ y: 200 }}
-            whileInView={{ y: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          >
-            <h3 className="font-montserrat font-bold text-3xl text-blue mb-4 first-letter:capitalize">
-              Click play when it fits you
-            </h3>
-            <p className="font-helvetica  text-blue leading-8">
-              After you log in, you&apos;ll find inspiring teachers in the fun,
-              relatable, real-life video lessons. The lessons focus on everyday
-              situations, so you can become more confident when talking at work
-              or with locals on the street. Find the topic and level you need.
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            <motion.img
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3 }}
-              className="max-w-2xl"
-              src={sectionHub}
-              alt=""
-            />
-            <motion.img
-              initial={{ x: 0, y: 0, scale: 1 }}
-              whileInView={{ x: -500, y: 300, scale: 1.5 }}
-              viewport={{ once: true, amount: 1 }}
-              transition={{ duration: 1, delay: 0.1 }}
-              className="absolute top-5 right-5"
-              src={miniVideo}
-              alt=""
-            />
-            <motion.img
-              initial={{ opacity: 0, x: 300 }}
-              whileInView={{ opacity: 1, x: 114 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="absolute top-[10px] right-[55px] max-w-[280px]"
-              src={graphIcon}
-              alt=""
-            />
+            <motion.div
+              style={{ opacity: imgOpacity, x: imgTranslateX }}
+              className="relative"
+            >
+              <motion.img className="max-w-2xl" src={sectionHub} alt="" />
+              <motion.img
+                style={{
+                  x: minivideoTranslateX,
+                  y: minivideoTranslateY,
+                  scale: minivideoScale,
+                }}
+                className="absolute top-5 right-5"
+                src={miniVideo}
+                alt=""
+              />
+              <motion.img
+                style={{ x: graphTranslateX }}
+                className="absolute top-5 right-5"
+                src={graphIcon}
+                alt=""
+              />
+            </motion.div>
           </div>
         </div>
       </section>
