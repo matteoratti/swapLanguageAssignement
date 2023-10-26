@@ -1,4 +1,4 @@
-import logo from "../../assets/hero-section/swl-logo.svg";
+import logo from "../../assets/hero-section/swl-logo.png";
 
 const Header = () => {
   return (

@@ -1,8 +1,8 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 
-import miniVideo from "../../assets/featured-section/fatured-section-video-minimized.svg";
-import sectionHub from "../../assets/featured-section/featured-section-hub.svg";
-import graphIcon from "../../assets/featured-section/featured-section-learning-overview.svg";
+import miniVideo from "../../assets/featured-section/fatured-section-video-minimized.png";
+import sectionHub from "../../assets/featured-section/featured-section-hub.png";
+import graphIcon from "../../assets/featured-section/featured-section-learning-overview.png";
 
 const FeaturedSection = () => {
   const { scrollYProgress } = useScroll();
