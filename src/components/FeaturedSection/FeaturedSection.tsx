@@ -19,7 +19,7 @@ const FeaturedSection = () => {
   const imgOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
   const imgTranslateX = useTransform(
     scrollYProgress,
-    [0, 0.2],
+    [0, 0.3],
     ["900px", "-50px"]
   );
 
@@ -40,7 +40,7 @@ const FeaturedSection = () => {
   const graphTranslateX = useTransform(
     scrollYProgress,
     [0.6, 1],
-    ["500px", "78px"]
+    ["500px", "60px"]
   );
 
   scrollYProgress.on("change", v => {
@@ -49,7 +49,7 @@ const FeaturedSection = () => {
 
   return (
     <>
-      <section className="h-[8000px] relative bg-gray">
+      <section className="h-[3000px] relative bg-gray">
         <div className="h-[100vh] sticky top-0 w-full">
           <div className="flex justify-center items-center w-full h-full">
             <motion.div
