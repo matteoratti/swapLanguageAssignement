@@ -10,37 +10,42 @@ const FeaturedSection = () => {
   // text carousel
   const yTranslate = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.5, 0.8],
+    [0, 0.2, 0.37, 0.7],
     ["100vh", "0vh", "0vh", "-100vh"]
   );
   const yopacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
+  console.log(scrollYProgress);
+
   // section hub
-  const imgOpacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
-  const imgTranslateX = useTransform(
+  const imgOpacity = useTransform(
     scrollYProgress,
-    [0, 0.3],
-    ["900px", "-50px"]
+    [0, 0.1, 0.15, 0.2, 0.25, 0.27, 0.33],
+    [0, 0.1, 0.2, 0.3, 0.5, 0.8, 1]
   );
 
   // minivideo -500 300
   const minivideoTranslateX = useTransform(
     scrollYProgress,
-    [0.6, 1],
-    ["0px", "-400px"]
+    [0.37, 0.7],
+    ["-50px", "-400px"]
   );
   const minivideoTranslateY = useTransform(
     scrollYProgress,
-    [0.6, 1],
+    [0.37, 0.7],
     ["0px", "300px"]
   );
-  const minivideoScale = useTransform(scrollYProgress, [0.6, 1], ["1", "1.5"]);
+  const minivideoScale = useTransform(
+    scrollYProgress,
+    [0.37, 0.7],
+    ["1", "1.5"]
+  );
 
   // graph image 400px 113px
   const graphTranslateX = useTransform(
     scrollYProgress,
-    [0.6, 1],
-    ["500px", "60px"]
+    [0.37, 0.7],
+    ["500px", "10px"]
   );
 
   scrollYProgress.on("change", v => {
@@ -82,11 +87,13 @@ const FeaturedSection = () => {
               </div>
             </motion.div>
 
-            <motion.div
-              style={{ opacity: imgOpacity, x: imgTranslateX }}
-              className="relative"
-            >
-              <motion.img className="max-w-2xl" src={sectionHub} alt="" />
+            <motion.div style={{ opacity: imgOpacity }} className="relative">
+              <motion.img
+                className="max-w-2xl"
+                style={{ translateX: -50 }}
+                src={sectionHub}
+                alt=""
+              />
               <motion.img
                 style={{
                   x: minivideoTranslateX,
